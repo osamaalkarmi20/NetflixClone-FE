@@ -6,12 +6,12 @@ import MovieModal from './MovieModal';
 import { useState } from 'react';
 function Movie(props){
     const [showFlag, setShowFlag] = useState(false);
-    const [clickedMeme, setClickedMeme] = useState({});
+    const [clickedMovie, setClickedMovie] = useState({});
 
     const handleShow = (item) => {
         setShowFlag(true)
       
-        setClickedMeme(item)
+        setClickedMovie(item)
     }
 
     const handleClose = () => {
@@ -36,7 +36,7 @@ function Movie(props){
                 )
              
         
-            })} <MovieModal showFlag={showFlag} handleClose={handleClose} clickedMeme={clickedMeme}/>
+            })} <MovieModal showFlag={showFlag} handleClose={handleClose} clickedMovie={clickedMovie}/>
 
         </>
     )
