@@ -21,10 +21,10 @@ function MovieModal(props) {
         <>
             <Modal  show={props.showFlag} onHide={props.handleClose} >
                 <Modal.Header closeButton>
-                    <Modal.Title class="blue">{props.clickedMeme.title}</Modal.Title>
+                    <Modal.Title class="blue">{props.clickedMovie.title}</Modal.Title>
                 </Modal.Header >
                 <Modal.Body class="blue">
-                    <Image src={props.clickedMeme.poster_path} width='100%'></Image>
+                    <Image src={props.clickedMovie.poster_path} width='100%'></Image>
                     <textarea name="comment" id="comment" rows="5" tabindex="4"  required="required"></textarea>
                 
                 </Modal.Body>
