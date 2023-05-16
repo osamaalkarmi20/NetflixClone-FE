@@ -25,14 +25,14 @@ function MovieModal(props) {
                 </Modal.Header >
                 <Modal.Body class="blue">
                     <Image src={props.clickedMovie.poster_path} width='100%'></Image>
-                    <textarea name="comment" id="comment" rows="5" tabindex="4"  required="required"></textarea>
+                    <textarea name="comment" id="comment" rows="5" tabindex="4"  required="required" value={props.clickedMovie.comment}></textarea>
                 
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={props.handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={()=>{props.handleClose(addToFav(props.clickedMeme)) }}>
+                    <Button variant="primary" onClick={()=>{props.handleClose(addToFav(props.clickedMovie)) }}>
                         Save to Favorite
                     </Button>
                 </Modal.Footer>
