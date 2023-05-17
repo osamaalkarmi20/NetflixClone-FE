@@ -2,11 +2,21 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import axios from 'axios';
-import "./q.css";
+
+
 function MovieModal(props) {
-    
+   
+             
+  const handleChange = event => {
+   
+
+    props.clickedMovie.comment= event.target.value;
+  };
+        
     const addToFav = (item) =>{
-        const serverURL = `http://localhost:3005/addMovies`;
+      
+ 
+        const serverURL = `${process.env.REACT_APP_serverURL}/addMovies`;
         
         axios.post(serverURL ,item)
         .then(response=>{
@@ -25,7 +35,7 @@ function MovieModal(props) {
                 </Modal.Header >
                 <Modal.Body class="blue">
                     <Image src={props.clickedMovie.poster_path} width='100%'></Image>
-                    <textarea name="comment" id="comment" rows="5" tabindex="4"  required="required" value={props.clickedMovie.comment}></textarea>
+                    <textarea name="comment" id="comment" rows="5" tabindex="4"  required="required" onChange={handleChange}></textarea>
                 
                 </Modal.Body>
                 <Modal.Footer>
