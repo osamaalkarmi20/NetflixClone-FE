@@ -8,18 +8,9 @@ function Home() {
     const [moviesdata, setMoviesData] = useState([])
 
     const getAllMovies = () => {
-        const serverURL = `http://localhost:3005/trending`;
+        const serverURL = `${process.env.REACT_APP_serverURL}/trending`;
 
-        // using axios
-        // axios.get(serverURL)
-        // .then(response=>{
-        //     console.log(response.data)
-        // })
-        // .catch((error)=>{
-        //     console.log(error)
-        // })
-
-        // using fetch
+     
         fetch(serverURL)
             .then(response => {
                 response.json().then(data => {
